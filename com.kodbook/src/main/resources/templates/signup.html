@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="signup.css" rel="stylesheet">
+</head>
+<body>
+	<h1>KodBook!</h1>
+	<h3>Create an account on #1 Social media app</h3>
+	<hr>
+	<form action="/signup" method="post">
+		<label>Username: </label>
+		<input type="text" name="username" required>
+		<br></br>
+		<label>Email: </label>
+		<input type="email" name="email" required>
+		<br></br>
+		<label>Password: </label>
+		<input type="password" name="password" required>
+		<br><br>
+		<label>DOB: </label>
+		<input type="date" name="dob" required>
+		<br></br>
+		<label>Gender: </label>
+		<label>Male</label>
+		<input type="radio" name="gender" value="male" required>
+		<label>Female</label>
+		<input type="radio" name="gender" value="female">
+		<label>Other</label>
+		<input type="radio" name="gender" value="other">
+		<br></br>
+		
+		<input type="submit" value="SignUp">
+		<hr>
+		<a href="/">Already have account? Login instead</a>
+	</form>
+	
+</body>
+</html>
