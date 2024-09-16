@@ -12,6 +12,8 @@ public interface UsersService {
 
 	public boolean validateUser(String text, String password);
 
+	public Users getUser(String text);
+
 	//public boolean userExists(String username, String email);
 
 

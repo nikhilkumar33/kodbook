@@ -3,15 +3,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href="home.css" rel="stylesheet">
 </head>
 <body>
-<h2>Profile Creation</h2>
-	<form action="/createpost" method="post" enctype="multipart/form-data">
-		<textarea name="caption" placeholder="caption" required></textarea>
-		<br>
-		<br>
+	<nav>
+		<a href="">My Profile</a>
+		<a href="/opennewsfeed">News Feed</a>
+		<a href="/opencreatepost">Create Post</a>
+	</nav>
+	<h2>Profile Creation</h2>
+	<form id="create" action="/createpost" method="post" enctype="multipart/form-data">
+		<textarea name="caption" placeholder="Write your caption here..." required></textarea>
+		<br><br>
 		<input type="file" name="photo" accept="image/*">
-		<br>
+		<br><br>
 		<button type="submit">POST</button>
 	</form>
 </body>

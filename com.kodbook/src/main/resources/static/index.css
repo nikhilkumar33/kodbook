@@ -1,92 +1,76 @@
-@charset "ISO-8859-1";
 /* index.css */
 
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
+    background-color: rgb(255, 248, 232);
+    color: rgb(103, 70, 54);
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ff5f6d, #ffc371); /* Gradient background */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Main container styling */
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-}
-
-/* Title styling */
 h1 {
-    font-size: 36px;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 10px;
+    color: rgb(103, 70, 54);
+    margin: 0; /* Remove default margin */
 }
 
 h3 {
-    font-size: 18px;
-    color: #f2f2f2;
+    color: rgb(170, 179, 150);
+    margin: 10px 0 20px 0; /* Provide vertical space between h1 and h3 */
+}
+
+form {
+    background-color: rgb(247, 238, 211);
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-/* Form labels */
 label {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 10px;
     display: block;
+    margin-bottom: 10px;
+    color: rgb(103, 70, 54);
 }
 
-/* Input fields */
-input[type="text"], input[type="password"] {
+input[type="text"], 
+input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border: 1px solid rgb(170, 179, 150);
     border-radius: 5px;
 }
 
-/* Login button */
 input[type="submit"] {
-    background-color: #ff5f6d;
+    background-color: rgb(170, 179, 150);
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #ff3b4f;
+    background-color: rgb(103, 70, 54);
 }
 
-/* Links */
 a {
-    color: #ff5f6d;
+    color: rgb(103, 70, 54);
     text-decoration: none;
-    margin: 10px 0;
-    display: inline-block;
-    font-size: 14px;
+    margin: 10px;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-/* Horizontal rule */
 hr {
-    border: none;
-    border-top: 1px solid #ccc;
     margin: 20px 0;
+    border: 1px solid rgb(170, 179, 150);
 }

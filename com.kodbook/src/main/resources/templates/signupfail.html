@@ -8,33 +8,27 @@
 <body>
 	<h1>KodBook!</h1>
 	<h3>Create an account on #1 Social media app</h3>
-	<hr>
-	<form action="/signup" method="post">
-		<h5>Email Id is already exist..</h5>
 
+	<form action="/signup" method="post">
+			<h5>Email Id is already exist..</h5>
 		<label>Username: </label>
 		<input type="text" name="username" required>
-		<br></br>
 		<label>Email: </label>
 		<input type="email" name="email" required>
-		<br></br>
 		<label>Password: </label>
 		<input type="password" name="password" required>
-		<br><br>
 		<label>DOB: </label>
 		<input type="date" name="dob" required>
-		<br></br>
 		<label>Gender: </label>
+		<div class="gender-group">
 		<label>Male</label>
 		<input type="radio" name="gender" value="male" required>
 		<label>Female</label>
 		<input type="radio" name="gender" value="female">
 		<label>Other</label>
 		<input type="radio" name="gender" value="other">
-		<br></br>
-		
+		</div>
 		<input type="submit" value="SignUp">
-		<hr>
 		<a href="/">Already have account? Login instead</a>
 	</form>
 </body>

@@ -1,1 +1,90 @@
-@charset "ISO-8859-1";
+/* signup.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 248, 232);
+    color: rgb(103, 70, 54);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    color: rgb(103, 70, 54);
+    margin: 0;
+    text-align: center;
+}
+
+h3 {
+    color: rgb(170, 179, 150);
+    margin: 10px 0 20px 0;
+    text-align: center;
+}
+
+form {
+    background-color: rgb(247, 238, 211);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(103, 70, 54);
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(170, 179, 150);
+    border-radius: 5px;
+}
+
+.gender-group {
+    margin-bottom: 15px;
+}
+
+.gender-group label,
+.gender-group input[type="radio"] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    background-color: rgb(170, 179, 150);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(103, 70, 54);
+}
+
+a {
+    color: rgb(103, 70, 54);
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+a:hover {
+    text-decoration: underline;
+}

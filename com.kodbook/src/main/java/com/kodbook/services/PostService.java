@@ -10,6 +10,10 @@ public interface PostService {
 
 	public List<Post> fetchAllPosts();
 
+	public Post getPost(Long id);
+
+	public void updatePost(Post post);
+
 
 
 }

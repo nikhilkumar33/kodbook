@@ -77,6 +77,18 @@ public class UsersServiceImplementation implements UsersService {
 		}
 	}
 
+	@Override
+	public Users getUser(String text) {
+		// TODO Auto-generated method stub
+		Users user1=urepo.findByEmail(text);
+		if(user1==null)
+		{
+			Users user2=urepo.findByUsername(text);
+			return user2;
+		}
+		return user1;
+	}
+
 	
 
 }

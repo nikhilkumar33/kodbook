@@ -24,4 +24,15 @@ public class PostServiceImplements implements PostService
 		List<Post> allposts=prepo.findAll();
 		return allposts;
 	}
+
+	@Override
+	public Post getPost(Long id) {
+		Post post=prepo.findById(id).get();
+		return post;
+	}
+
+	@Override
+	public void updatePost(Post post) {
+		prepo.save(post);
+	}
 }

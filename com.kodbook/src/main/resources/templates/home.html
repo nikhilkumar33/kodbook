@@ -4,27 +4,63 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link href="home.css" rel="stylesheet">
+
 </head>
 <body>
-	<header>
-	<h1>Welcome home!!</h1>
-		<nav>
-		<a href="">My Profile</a>
-		<a href="/opennewsfeed">News Feed</a>
+	<nav>
+		
+		<a href="">My Profile</a> 
+		<a href="/opennewsfeed">News Feed</a> 
 		<a href="/opencreatepost">Create Post</a>
-		</nav>
-	</header>
+		
+    	<div class="user-info">
+        <span th:each="user : ${user}">
+            <span class="username" th:text="${user.username}"></span>
+        </span>
+        <div class="userimg">
+            <img src="user.png" alt="user">
+        </div>
+    </div>
+	</nav>
 	<h1>Post Details</h1>
 	<div class="profile-details">
-       <span th:each="post : ${allposts}">
-       		<p><strong>Photo:</strong></p>
-       		<img th:if="${post.photoBase64}" 
-       		th:src="'data:image/jpeg;base64,'+${post.photoBase64}" 
-       		alt="Profile Photo" />
-       		<p><strong>Caption:</strong></p>
-       		<span th:text="${post.caption}"></span>
-        </span>
-     </div>  
-        
+		<div class="posts-grid">
+		<span th:each="post : ${allposts}">
+			<p>
+				<strong>Photo:</strong>
+			</p> <img th:if="${post.photoBase64}"
+			th:src="'data:image/jpeg;base64,'+${post.photoBase64}"
+			alt="Profile Photo" />
+			<p>
+				<strong>Caption:</strong>
+			</p> <span th:text="${post.caption}"></span>
+			
+			
+			<form action="/likepost" method="post" class="like-container">
+    			<input type="hidden" name="id" th:value="${post.id}"> 
+			    <button class="like-button">
+			        <i class="fas fa-thumbs-up"></i> 
+			    </button>
+			    <span class="like-count" th:text="${post.likes}"></span>
+			</form>
+
+			<form action="/addcomment" method="post" class="comment-form">
+				<input type="hidden" name="id" th:value="${post.id}">
+				<textarea name="comment" placeholder="Add a comment..." required></textarea>
+				<input type="submit" value="Comment">
+			</form> 
+			
+			<!-- Displaying Comments -->
+			<div class="comments-section">
+				<h4>Comments:</h4>
+				<ul>
+					<li th:each="comment : ${post.comments}">
+					<span th:text="${comment}"></span>
+					</li>
+				</ul>
+			</div>
+		</span>
+	</div>
+	</div>
 </body>
 </html>
