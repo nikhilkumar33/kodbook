@@ -21,10 +21,5 @@ public class NavController {
 	{
 		return "createpost";
 	}
-	/*
-	@GetMapping("/opennewsfeed")
-	public String openNewsFeed()
-	{
-		return "home";
-	}*/
+	
 }

@@ -75,4 +75,16 @@ public class PostController
 		model.addAttribute("allposts", allposts);
 		return "home";
 	}
+	
+	@GetMapping("/openmyprofile")
+	public String myProfile()
+	{
+		return "myprofile";
+	}
+	
+	@GetMapping("/openeditprofile")
+	public String editProfile()
+	{
+		return "editprofile";
+	}
 }
