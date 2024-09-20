@@ -22,4 +22,9 @@ public class NavController {
 		return "createpost";
 	}
 	
+	@GetMapping("/openeditprofile")
+	public String editProfile()
+	{
+		return "editprofile";
+	}
 }

@@ -14,6 +14,8 @@ public interface UsersService {
 
 	public Users getUser(String text);
 
+	public void updateUser(Users user);
+
 	//public boolean userExists(String username, String email);
 
 

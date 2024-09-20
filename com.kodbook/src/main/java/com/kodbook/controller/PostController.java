@@ -15,6 +15,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.kodbook.entities.Post;
 import com.kodbook.services.PostService;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class PostController 
 {
@@ -22,7 +24,8 @@ public class PostController
 	PostService pserv;
 	
 	@PostMapping("/createpost")
-	public String creaePost(@RequestParam("caption") String caption,@RequestParam("photo") MultipartFile photo,Model model)
+	public String creaePost(@RequestParam("caption") String caption,
+			@RequestParam("photo") MultipartFile photo,Model model)
 	{
 		Post post=new Post();
 		post.setCaption(caption);
@@ -34,6 +37,8 @@ public class PostController
 			e.printStackTrace(); 
 		}
 		pserv.createPost(post);
+		
+		
 		List<Post> allposts=pserv.fetchAllPosts();
 		model.addAttribute("allposts", allposts);
 		return "home";
@@ -76,15 +81,7 @@ public class PostController
 		return "home";
 	}
 	
-	@GetMapping("/openmyprofile")
-	public String myProfile()
-	{
-		return "myprofile";
-	}
 	
-	@GetMapping("/openeditprofile")
-	public String editProfile()
-	{
-		return "editprofile";
-	}
+	
+	
 }

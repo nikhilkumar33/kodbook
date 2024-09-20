@@ -89,6 +89,12 @@ public class UsersServiceImplementation implements UsersService {
 		return user1;
 	}
 
+	@Override
+	public void updateUser(Users user) {
+		urepo.save(user);
+		
+	}
+
 	
 
 }

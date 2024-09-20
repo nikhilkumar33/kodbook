@@ -5,6 +5,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Edit profile</h1>
+	<h2>Update your profile</h2>
+	<form action="/updateprofile" method="post" enctype="multipart/form-data">
+		<label>DOB: </label>
+		<input type="date" name="dob">
+		<br><br>
+		<label>Gender: </label>
+		<label>Male</label> <input type="radio" name="gender" value="male">
+		<label>Female</label> <input type="radio" name="gender" value="female">
+		<label>Other</label> <input type="radio" name="gender" value="other">
+		<br><br>
+		<label>City: </label>
+		<input type="text" name="city">
+		<br><br>
+		<label>Bio: </label>
+		<input type="text" name="bio">
+		<br><br>
+		<label>College: </label>
+		<input type="text" name="college">
+		<br><br>
+		<label>LinkedIn: </label>
+		<input type="text" name="linkedin">
+		<br><br>
+		<label>GitHub: </label>
+		<input type="text" name="github">
+		<br><br>
+		<input type="file" name="profilePic" accept="image/*">
+		<br><br>
+		<input type="submit" value="Update Profile">
+	</form>
 </body>
 </html>

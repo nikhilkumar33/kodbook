@@ -4,23 +4,15 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link href="home.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 	<nav>
-		
-		<a href="/openmyprofile">My Profile</a> 
-		<a href="/opennewsfeed">News Feed</a> 
-		<a href="/opencreatepost">Create Post</a>
-		
-    	<div class="user-info">
-        <span th:each="user : ${user}">
-            <span class="username" th:text="${user.username}"></span>
-        </span>
-        <div class="userimg">
-            <img src="user.png" alt="user">
-        </div>
-    </div>
+		<p>Welcome 
+		<span th:text="${session.username}"></span></p>
+		<a href="/myprofile"><i class="fas fa-user-circle"></i> My Profile</a>
+		<a href="/opennewsfeed"><i class="fas fa-home"></i> News Feed</a>
+		<a href="/opencreatepost"><i class="fas fa-plus-circle"></i> Create Post</a>
 	</nav>
 	<h1>Post Details</h1>
 	<div class="profile-details">

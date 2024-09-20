@@ -2,11 +2,47 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>My Profile</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="myprofile.css" rel="stylesheet">
 </head>
 <body>
-	<h1>My Profile Home!</h1>
-	<label>Profile pic</label>
-	<a href="openeditprofile">Edit Profile</a>
+	<nav>
+		<span th:text="${session.username}"></span> 
+		<a href="/myprofile"><i class="fas fa-user-circle"></i> My Profile</a> 
+		<a href="/opennewsfeed"><i class="fas fa-home"></i> News Feed</a> 
+		<a href="/opencreatepost"><i class="fas fa-plus-circle"></i> Create Post</a>
+		 <a href="openeditprofile"><i class="fas fa-edit"></i> Edit Profile</a>
+	</nav>
+
+	<div class="profile-picture">
+		<img th:if="${user.photoBase64}"
+			th:src="'data:image/jpeg;base64,' + ${user.photoBase64}"
+			alt="Profile Photo" />
+	</div>
+	<div class="username">
+		<h1 th:text="${user.username}"></h1>
+	</div>
+	<div class="profile-info">
+		<ul>
+			<li><i class="fas fa-calendar-alt"></i> Date of Birth: <span th:text="${user.dob}"></span></li>
+			<li><i class="fas fa-venus-mars"></i> Gender: <span th:text="${user.gender}"></span></li>
+			<li><i class="fas fa-map-marker-alt"></i> City: <span th:text="${user.city}"></span></li>
+			<li><i class="fas fa-graduation-cap"></i> College: <span th:text="${user.college}"></span></li>
+			<li><i class="fas fa-info-circle"></i> Bio: <span th:text="${user.bio}"></span></li>
+		</ul>
+
+		<div class="social-links">
+			<p>
+				<i class="fab fa-linkedin"></i> <a th:href="${user.linkedin}"
+					target="_blank">LinkedIn</a>
+			</p>
+			<p>
+				<i class="fab fa-github"></i> <a th:href="${user.github}"
+					target="_blank">GitHub</a>
+			</p>
+
+		</div>
+	</div>
 </body>
 </html>
