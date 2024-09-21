@@ -60,6 +60,8 @@ public class UsersController {
 			session.setAttribute("username", username);
 			model.addAttribute("session", session);
 			
+			model.addAttribute("user", user);
+			
 			List<Post> allposts=pserv.fetchAllPosts();
 			model.addAttribute("allposts", allposts);
 			return "home";
@@ -95,6 +97,7 @@ public class UsersController {
 		}
 		
 		userv.updateUser(user);
+		model.addAttribute("user", user);
 		return "myprofile";
 	}
 	

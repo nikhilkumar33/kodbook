@@ -1,13 +1,10 @@
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: rgb(247, 238, 211); /* Light beige */
     margin: 0;
     padding: 0;
     color: rgb(103, 70, 54); /* Dark brown */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* Navigation Bar */
@@ -36,6 +33,20 @@ nav a {
 nav a:hover {
     color: rgb(247, 238, 211); /* Light beige on hover */
 }
+
+.nav-profile-pic img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    border-radius: 50%; /* To make the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+nav span {
+    color: #ffffff; /* Changes username text color to white */
+    text-transform: uppercase; /* Makes the username uppercase */
+    font-weight: bold;
+}
+  
 
 .user-info {
     display: flex;
@@ -267,4 +278,231 @@ h2 {
 #create button:hover {
     background-color: rgb(170, 179, 150); /* Muted green on hover */
     transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #9DBDFF;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FFD7C4;
+    margin-bottom: 10px;
+}
+
+.username h1 {
+    color: #2A2A2A;
+    margin: 0;
+}
+
+/* Profile Content */
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-info li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.profile-info i {
+    margin-right: 8px;
+    color: #7695FF;
+}
+
+.social-links p {
+    margin: 5px 0;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #7695FF;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #FF9874;
+}
+
+/* Posts Container */
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Post Card */
+.post-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Post Header - Profile picture and Username */
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* Post Image */
+.post-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Caption */
+.caption {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Likes */
+.likes {
+    margin-bottom: 10px;
+}
+
+/* Like and Comment form */
+form {
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    background-color: #FF9874;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+/* Comment form styling */
+.comment-form textarea {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #7695FF;
+    border-radius: 10px;
+    font-size: 1em;
+    resize: none;
+}
+
+/* Comments section */
+.comments-section {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.comments-section h4 {
+    color: #7695FF;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.comments-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.comments-section ul li {
+    background-color: #9DBDFF;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #2A2A2A;
+}
+
+/* Post Form Container */
+.post-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #9DBDFF;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-form-container h2 {
+    margin-bottom: 20px;
+    color: #2A2A2A;
+}
+
+textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #7695FF;
+    resize: none;
+}
+
+/* Input Fields */
+input[type="file"] {
+    margin-top: 10px;
+}
+.post-profile {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.post-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
