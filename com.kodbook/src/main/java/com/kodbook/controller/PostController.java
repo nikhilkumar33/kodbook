@@ -59,12 +59,16 @@ public class PostController
 
 	    List<Post> allPosts = pserv.fetchAllPosts();
 	    model.addAttribute("allposts", allPosts);
+	    model.addAttribute("user", user);
 	    return "home";
 	}
 
 	@GetMapping("/opennewsfeed")
 	public String showPosts(Model model,HttpSession session )
 	{
+		if(session.getAttribute("username")==null)
+			return "index";
+		
 		List<Post> allposts=pserv.fetchAllPosts();
 		model.addAttribute("allposts", allposts);
 		String username = (String) session.getAttribute("username");
@@ -75,6 +79,7 @@ public class PostController
 	
 	@PostMapping("/likepost")
 	public String likePost(@RequestParam Long id, Model model,HttpSession session) {
+		
 		Post post=pserv.getPost(id);
 		post.setLikes(post.getLikes() + 1);
 		pserv.updatePost(post);
@@ -108,4 +113,5 @@ public class PostController
 		model.addAttribute("allposts", allposts);
 		return "home";
 	}
+	
 }

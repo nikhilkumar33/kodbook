@@ -5,7 +5,8 @@ body {
     margin: 0;
     padding: 0;
     color: rgb(103, 70, 54); /* Dark brown */
-}
+  overflow-y: scroll;
+  }
 
 /* Navigation Bar */
 nav {
@@ -28,6 +29,7 @@ nav a {
     font-weight: bold;
     font-size: 18px;
     transition: color 0.3s ease;
+    padding-right: 50px;
 }
 
 nav a:hover {
@@ -45,6 +47,7 @@ nav span {
     color: #ffffff; /* Changes username text color to white */
     text-transform: uppercase; /* Makes the username uppercase */
     font-weight: bold;
+    padding-left: 10px;
 }
   
 
@@ -505,4 +508,13 @@ input[type="file"] {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+.post-profile span{
+	font-weight: bold;
+	font-size: 24px;
+	font-style: inherit;
+	text-transform: capitalize;
+}
+body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
 }

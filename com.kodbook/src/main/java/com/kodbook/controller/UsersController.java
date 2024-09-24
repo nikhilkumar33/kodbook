@@ -60,6 +60,7 @@ public class UsersController {
 			session.setAttribute("username", username);
 			model.addAttribute("session", session);
 			
+			
 			model.addAttribute("user", user);
 			
 			List<Post> allposts=pserv.fetchAllPosts();
@@ -104,9 +105,26 @@ public class UsersController {
 	@GetMapping("/myprofile")
 	public String myProfile(HttpSession session,Model model)
 	{
+		if(session.getAttribute("username")==null)
+			return "index";
+		
 		String username=(String)session.getAttribute("username");
 		Users user=userv.getUser(username);
+		List<Post> posts=user.getPosts();
+		model.addAttribute("posts", posts);
+		
 		model.addAttribute("user", user);
 		return "myprofile";
+	}
+	@PostMapping("/visitprofile")
+	public String visitProfile(@RequestParam String profileName,Model model)
+	{
+		Users user=userv.getUser(profileName);
+		model.addAttribute("user", user);
+		
+		List<Post> posts=user.getPosts();
+		model.addAttribute("posts", posts);
+		
+		return "showUserProfile";
 	}
 }

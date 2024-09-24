@@ -3,6 +3,8 @@ package com.kodbook.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class NavController {
 
@@ -17,14 +19,28 @@ public class NavController {
 		return "resetpassword";
 	}
 	@GetMapping("/opencreatepost")
-	public String openCreatePost()
+	public String openCreatePost(HttpSession session)
 	{
-		return "createpost";
+		if(session.getAttribute("username")!=null) {
+			return "createpost";
+		}
+		else {
+			return "index";
+		}
 	}
 	
 	@GetMapping("/openeditprofile")
-	public String editProfile()
+	public String editProfile(HttpSession session)
 	{
-		return "editprofile";
+		if(session.getAttribute("username")!=null)
+			return "editprofile";
+		else
+			return "index";
+	}
+	@GetMapping("/logout")
+	public String logout(HttpSession session)
+	{
+		session.invalidate();
+		return "index";
 	}
 }

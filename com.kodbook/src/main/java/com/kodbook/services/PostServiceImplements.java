@@ -35,4 +35,10 @@ public class PostServiceImplements implements PostService
 	public void updatePost(Post post) {
 		prepo.save(post);
 	}
+
+	@Override
+	public void deletePost(long id) {
+		// TODO Auto-generated method stub
+		prepo.deleteById(id);
+	}
 }

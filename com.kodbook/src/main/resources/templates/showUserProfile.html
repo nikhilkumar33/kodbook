@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>My Profile</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link href="myprofile.css" rel="stylesheet">
 </head>
@@ -12,7 +12,6 @@
 		<a href="/myprofile"><i class="fas fa-user-circle"></i> My Profile</a> 
 		<a href="/opennewsfeed"><i class="fas fa-home"></i> News Feed</a> 
 		<a href="/opencreatepost"><i class="fas fa-plus-circle"></i> Create Post</a>
-		 <a href="/openeditprofile"><i class="fas fa-edit"></i> Edit Profile</a>
 	</nav>
 
 	<div class="profile-picture">
@@ -60,11 +59,8 @@
                     <img th:if="${post.photoBase64}" 
                          th:src="'data:image/jpeg;base64,' + ${post.photoBase64}" 
                          alt="Post Photo" />
-                       <form action="/deletepost" method="post">
-                       	<input type="hidden" th:value="${post.id}" name="id">
-                       	<input type="submit" value="delete">
-                       </form>
                 </div>
+
                 <!-- Caption -->
                 <p class="caption">
                     <span th:text="${post.caption}"></span>
