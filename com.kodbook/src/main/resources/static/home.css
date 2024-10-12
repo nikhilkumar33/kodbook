@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(247, 238, 211); /* Light beige */
+    background-color: rgb(166, 177, 225); /* Light beige */
     margin: 0;
     padding: 0;
     color: rgb(103, 70, 54); /* Dark brown */
@@ -11,7 +11,7 @@ body {
 /* Navigation Bar */
 nav {
     width: 100%;
-    background-color: rgb(170, 179, 150); /* Muted green */
+    background-color: #424874; /* Muted green */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +23,7 @@ nav {
 }
 
 nav a {
-    color: rgb(255, 248, 232); /* Creamy white */
+    color: white; /* Creamy white */
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -33,7 +33,7 @@ nav a {
 }
 
 nav a:hover {
-    color: rgb(247, 238, 211); /* Light beige on hover */
+    color: rgb(189, 183, 139); /* Light beige on hover */
 }
 
 .nav-profile-pic img {
@@ -111,7 +111,7 @@ h1 {
 }
 
 strong {
-    color: rgb(170, 179, 150); /* Muted green */
+    color: #88946b; /* Muted green */
 }
 
 /* Like and Comment Forms */
@@ -360,7 +360,7 @@ h2 {
 
 /* Post Card */
 .post-card {
-    background-color: white;
+    background-color: rgb(220, 214, 247);
     border-radius: 15px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     width: 500px;
@@ -405,6 +405,7 @@ h2 {
 .caption {
     font-size: 1.2em;
     margin-bottom: 10px;
+    color: black;
 }
 
 /* Likes */
@@ -517,4 +518,65 @@ input[type="file"] {
 }
 body::-webkit-scrollbar {
     display: none; /* Hide scrollbar for WebKit browsers */
+}
+/* Styling for the form with id "create" */
+#create {
+    background-color: rgb(220, 214, 247); /* Light beige background */
+    padding: 30px; /* Increase padding for more space inside */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Larger shadow for more depth */
+    width: 60%; /* Slightly narrower form */
+    max-width: 500px; /* Limit maximum width */
+    margin: 20px auto; /* Center the form horizontally */
+    padding-right: 55px;
+}
+
+/* Textarea styling within the form */
+#create textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Add padding for better spacing */
+    border: 2px solid rgb(103, 70, 54); /* Dark brown border */
+    border-radius: 8px; /* More rounded corners */
+    font-size: 16px; /* Adjust font size */
+    resize: vertical; /* Allow vertical resizing */
+    margin-bottom: 20px; /* Space below the textarea */
+    background-color: rgb(255, 255, 255); /* White background */
+}
+
+/* File input styling */
+#create input[type="file"] {
+    display: block; /* Display as block */
+    margin-bottom: 20px; /* Space below the file input */
+    border: 2px solid rgb(103, 70, 54); /* Dark brown border */
+    border-radius: 8px; /* More rounded corners */
+    padding: 5px; /* Padding inside the file input */
+}
+
+/* Button styling */
+#create button {
+    background-color: rgb(166, 177, 225); /* Dark brown */
+    color: rgb(255, 248, 232); /* Creamy white text */
+    border: none;
+    padding: 12px 24px; /* Add padding for button */
+    font-size: 18px; /* Larger font size for the button */
+    cursor: pointer;
+    border-radius: 8px; /* More rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Button hover effect */
+#create button:hover {
+    background-color: rgb(66, 72, 116); /* Muted green on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Styling for h2 */
+h2 {
+    color: rgb(103, 70, 54); /* Dark brown */
+    font-size: 28px; /* Larger font size for emphasis */
+    margin: 20px 0; /* Margin to provide space around the heading */
+    text-align: center; /* Center the heading */
+    font-weight: bold; /* Bold text for emphasis */
+    border-bottom: 2px solid rgb(170, 179, 150); /* Muted green underline */
+    padding-bottom: 10px; /* Space below the heading text */
 }

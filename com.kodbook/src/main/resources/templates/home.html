@@ -12,18 +12,18 @@
 		<img th:if="${user.photoBase64}"
 			th:src="'data:image/jpeg;base64,' + ${user.photoBase64}"
 			alt="Profile Photo" />
-		</div>
 		<span th:text="${session.username}"></span>
+		</div>
 		<a href="/myprofile"><i class="fas fa-user-circle"></i> My Profile</a>
 		<a href="/opennewsfeed"><i class="fas fa-home"></i> News Feed</a>
 		<a href="/opencreatepost"><i class="fas fa-plus-circle"></i> Create Post</a>
 		<a href="/logout">Logout</a>
+	
 	</nav>
 	<h1>Post Details</h1>
 	<div class="posts-container">
         <span th:each="post : ${allposts}">
             <div class="post-card">
-                <!-- Post Image -->
                 
                 <div class="post-profile">
                     <form action="/visitprofile" method="post">

@@ -8,7 +8,12 @@
 </head>
 <body>
 	<nav>
+	<div class="nav-profile-pic">
+		<img th:if="${user.photoBase64}"
+			th:src="'data:image/jpeg;base64,' + ${user.photoBase64}"
+			alt="Profile Photo" />
 		<span th:text="${session.username}"></span> 
+		</div>
 		<a href="/myprofile"><i class="fas fa-user-circle"></i> My Profile</a> 
 		<a href="/opennewsfeed"><i class="fas fa-home"></i> News Feed</a> 
 		<a href="/opencreatepost"><i class="fas fa-plus-circle"></i> Create Post</a>
@@ -19,6 +24,11 @@
 		<img th:if="${user.photoBase64}"
 			th:src="'data:image/jpeg;base64,' + ${user.photoBase64}"
 			alt="Profile Photo" />
+			
+		<form action="/addProfilePic" method="post" enctype="multipart/form-data" class="add-new-profile">
+			<label class="custom-file-label" for="file"><i class="fas fa-edit"></i>Add Profile</label>
+    		<input id="file" type="file" name="profilePic" accept="image/*" onchange="this.form.submit()">
+		</form>
 	</div>
 	<div class="username">
 		<h1 th:text="${user.username}"></h1>
@@ -60,10 +70,7 @@
                     <img th:if="${post.photoBase64}" 
                          th:src="'data:image/jpeg;base64,' + ${post.photoBase64}" 
                          alt="Post Photo" />
-                       <form action="/deletepost" method="post">
-                       	<input type="hidden" th:value="${post.id}" name="id">
-                       	<input type="submit" value="delete">
-                       </form>
+                       
                 </div>
                 <!-- Caption -->
                 <p class="caption">

@@ -1,9 +1,7 @@
-/* signup.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(255, 248, 232);
-    color: rgb(103, 70, 54);
+    background-color: #F4EEFF; /* Light background color */
+    color: #424874; /* Main text color */
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,56 +11,70 @@ body {
     flex-direction: column;
 }
 
-h1 {
-    color: rgb(103, 70, 54);
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.info h1 {
+    color: #424874; /* Darker color for KodBook */
     margin: 0;
     text-align: center;
 }
 
-h3 {
-    color: rgb(170, 179, 150);
-    margin: 10px 0 20px 0;
+.info p {
+    color: rgb(96, 115, 202); /* Lighter text color for subheading */
+    margin: 10px 0 20px;
     text-align: center;
+    font-size: 18px;
 }
 
 form {
-    background-color: rgb(247, 238, 211);
-    padding: 20px 40px;
+    background-color: #DCD6F7; /* Light purple background for the form */
+    padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 350px;
+    padding-right: 55px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
-    color: rgb(103, 70, 54);
+    color: #424874; /* Text color for labels */
     font-weight: bold;
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
+input[type="text"],
+input[type="email"],
+input[type="password"],
 input[type="date"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid rgb(170, 179, 150);
+    border: 1px solid #A6B1E1; /* Border with lighter color */
     border-radius: 5px;
+    font-size: 14px;
+    background-color: #F4EEFF; /* Light background inside input fields */
+    color: #424874; /* Input text color */
 }
 
 .gender-group {
     margin-bottom: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .gender-group label,
 .gender-group input[type="radio"] {
-    display: inline-block;
     margin-right: 10px;
+    color: #424874;
 }
 
 input[type="submit"] {
-    background-color: rgb(170, 179, 150);
+    background-color: #A6B1E1; /* Button background */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -70,14 +82,15 @@ input[type="submit"] {
     cursor: pointer;
     width: 100%;
     margin-top: 20px;
+    font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: rgb(103, 70, 54);
+    background-color: #424874; /* Darker background on hover */
 }
 
 a {
-    color: rgb(103, 70, 54);
+    color: #424874; /* Link color */
     text-decoration: none;
     margin-top: 15px;
     display: inline-block;
@@ -87,4 +100,15 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+h5{
+    color: #FF4C4C; /* Bright red color to indicate error */
+    font-size: 16px; /* Set a readable size */
+    background-color: #FFE6E6; /* Light red background to match error tone */
+    padding: 10px; /* Add padding for space around the text */
+    border: 1px solid #FF4C4C; /* Add a border to frame the error */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the error message text */
+    margin: 10px 0; /* Space above and below the message */
+    font-weight: bold; /* Make the error message stand out */
 }

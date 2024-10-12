@@ -46,8 +46,8 @@ public class PostController
 	    }
 	    pserv.createPost(post);
 
-	    // Updating user's posts list
-	    List<Post> posts = user.getPosts(); // Get posts directly from the user
+	    // Updating user's object
+	    List<Post> posts = user.getPosts();
 	    if (posts == null) {
 	        posts = new ArrayList<>();
 	    }

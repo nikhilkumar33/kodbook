@@ -1,9 +1,7 @@
-/* index.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(255, 248, 232);
-    color: rgb(103, 70, 54);
+    background-color: #F4EEFF; /* Background color */
+    color: #424874; /* Text color */
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,58 +10,78 @@ body {
     height: 100vh;
 }
 
-h1 {
-    color: rgb(103, 70, 54);
-    margin: 0; /* Remove default margin */
+.container {
+    display: flex; /* Use Flexbox to align items horizontally */
+    align-items: center; /* Align vertically in the middle */
+    gap: 30px; /* Space between info and form */
 }
 
-h3 {
-    color: rgb(170, 179, 150);
-    margin: 10px 0 20px 0; /* Provide vertical space between h1 and h3 */
+.info {
+    text-align: right; /* Align text to the right of the container */
+   padding-right: 100px;
+}
+
+h1 {
+    color: #424874;
+    margin: 0;
+}
+.highlight {
+    color: #A6B1E1; /* Lighter color for the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    border-bottom: 2px solid #A6B1E1; /* Underline with matching color */
+    padding-bottom: 3px; /* Slight padding for the underline */
+    font-weight: bold; /* Make the text bold */
+}
+
+p {
+    color: rgb(96, 115, 202);
+    margin: 10px 0 20px 0;
 }
 
 form {
-    background-color: rgb(247, 238, 211);
-    padding: 20px;
-    padding-right: 40px;
+    background-color: #DCD6F7; /* Form background color */
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    width: 350px;
+    text-align: left;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
-    color: rgb(103, 70, 54);
+    margin-bottom: 5px;
+    color: #424874;
 }
 
 input[type="text"], 
 input[type="password"] {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid rgb(170, 179, 150);
+    border: 1px solid #A6B1E1;
     border-radius: 5px;
 }
 
 input[type="submit"] {
-    background-color: rgb(170, 179, 150);
+    background-color: #A6B1E1;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
 }
 
 input[type="submit"]:hover {
-    background-color: rgb(103, 70, 54);
+    background-color: #424874;
 }
 
 a {
-    color: rgb(103, 70, 54);
+    color: #424874;
     text-decoration: none;
-    margin: 10px;
+    display: block;
+    text-align: center;
+    margin: 15px 0;
 }
 
 a:hover {
@@ -72,5 +90,28 @@ a:hover {
 
 hr {
     margin: 20px 0;
-    border: 1px solid rgb(170, 179, 150);
+    border: 1px solid #A6B1E1;
+    width: 100%;
+}
+h5{
+    color: #FF4C4C; /* Bright red color to indicate error */
+    font-size: 16px; /* Set a readable size */
+    background-color: #FFE6E6; /* Light red background to match error tone */
+    padding: 10px; /* Add padding for space around the text */
+    border: 1px solid #FF4C4C; /* Add a border to frame the error */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the error message text */
+    margin: 20px 0; /* Space above and below the message */
+    font-weight: bold; /* Make the error message stand out */
+}
+h4{
+    color: #4CAF50; /* Green color for success */
+    font-size: 18px; /* Set a readable size */
+    background-color: #E8F5E9; /* Light green background to match success tone */
+    padding: 10px; /* Add padding for space around the text */
+    border: 1px solid #4CAF50; /* Add a border to frame the success message */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the success message text */
+    margin: 20px 0; /* Space above and below the message */
+    font-weight: bold; /* Make the success message stand out */
 }

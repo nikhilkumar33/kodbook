@@ -72,33 +72,46 @@ public class UsersController {
 	}
 	
 	@PostMapping("/updateprofile")
-	public String updateProfile(@RequestParam String dob,@RequestParam String gender,
+	public String updateProfile(@RequestParam String dob,@RequestParam(required = false) String gender,
 			@RequestParam String city,@RequestParam String bio,@RequestParam String college,
 			@RequestParam String linkedin,@RequestParam String github,
 			@RequestParam("profilePic") MultipartFile profilePic,Model model,HttpSession session)
 	{
 		//Here we get the username using session and it will return an object so here we hv performing casting
 		String username=(String)session.getAttribute("username");
-		Users user=userv.getUser(username);
-		
-		user.setDob(dob);
-		user.setGender(gender);
-		user.setCity(city);
-		user.setBio(bio);
-		user.setCollege(college);
-		user.setLinkedin(linkedin);
-		user.setGithub(github);
-		
-		try {
-			user.setProfilePic(profilePic.getBytes());
+		Users user = userv.getUser(username);
+		if (dob != null && !dob.isEmpty()) {
+			user.setDob(dob);
 		}
-		catch(IOException e)
-		{
-			e.printStackTrace(); 
+		if (gender != null && !gender.isEmpty()) {
+			user.setGender(gender);
 		}
-		
+		if (city != null && !city.isEmpty()) {
+			user.setCity(city);
+		}
+		if (bio != null && !bio.isEmpty()) {
+			user.setBio(bio);
+		}
+		if (college != null && !college.isEmpty()) {
+			user.setCollege(college);
+		}
+		if (linkedin != null && !linkedin.isEmpty()) {
+			user.setLinkedin(linkedin);
+		}
+		if (github != null && !github.isEmpty()) {
+			user.setGithub(github);
+		}
+		if (!profilePic.isEmpty()) {
+			try {
+				user.setProfilePic(profilePic.getBytes());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		userv.updateUser(user);
 		model.addAttribute("user", user);
+		List<Post> posts=user.getPosts();
+		model.addAttribute("posts", posts);
 		return "myprofile";
 	}
 	
@@ -126,5 +139,23 @@ public class UsersController {
 		model.addAttribute("posts", posts);
 		
 		return "showUserProfile";
+	}
+	@PostMapping("/addProfilePic")
+	public String addNewProfile(@RequestParam("profilePic") MultipartFile profilePic, Model model, HttpSession session)
+	{
+		String username=(String)session.getAttribute("username");
+		Users user=userv.getUser(username);
+		try {
+			user.setProfilePic(profilePic.getBytes());
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace(); 
+		}
+		userv.updateUser(user);
+		model.addAttribute("user", user);
+		List<Post> posts=user.getPosts();
+		model.addAttribute("posts", posts);
+		return "myprofile";
 	}
 }

@@ -8,17 +8,24 @@
 </head>
 <body>
 	<nav>
+		<div class="nav-profile-pic">
+		<img th:if="${user.photoBase64}"
+			th:src="'data:image/jpeg;base64,' + ${user.photoBase64}"
+			alt="Profile Photo" />
 		<span th:text="${session.username}"></span>
+		</div>
 		<a href="/myprofile"><i class="fas fa-user-circle"></i> My Profile</a>
 		<a href="/opennewsfeed"><i class="fas fa-home"></i> News Feed</a>
 		<a href="/opencreatepost"><i class="fas fa-plus-circle"></i> Create Post</a>
 	</nav>
-	<h2>Profile Creation</h2>
+	
+	<h2>Upload New Post</h2>
+	
 	<form id="create" action="/createpost" method="post" enctype="multipart/form-data">
 		<textarea name="caption" placeholder="Write your caption here..." required></textarea>
-		<br><br>
+		
 		<input type="file" name="photo" accept="image/*">
-		<br><br>
+		
 		<button type="submit">POST</button>
 	</form>
 </body>

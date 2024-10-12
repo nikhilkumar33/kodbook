@@ -3,35 +3,31 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link href="updateprofile.css" rel="stylesheet">
 </head>
 <body>
 	<h2>Update your profile</h2>
 	<form action="/updateprofile" method="post" enctype="multipart/form-data">
 		<label>DOB: </label>
 		<input type="date" name="dob">
-		<br><br>
 		<label>Gender: </label>
-		<label>Male</label> <input type="radio" name="gender" value="male">
-		<label>Female</label> <input type="radio" name="gender" value="female">
-		<label>Other</label> <input type="radio" name="gender" value="other">
-		<br><br>
+		<div class="gender-group">
+			<label>Male</label> <input type="radio" name="gender" value="male" >
+			<label>Female</label> <input type="radio" name="gender" value="female">
+			<label>Other</label> <input type="radio" name="gender" value="other">
+		</div>
 		<label>City: </label>
-		<input type="text" name="city">
-		<br><br>
+		<input type="text" name="city" >
 		<label>Bio: </label>
-		<input type="text" name="bio">
-		<br><br>
+		<input type="text" name="bio" >
 		<label>College: </label>
-		<input type="text" name="college">
-		<br><br>
+		<input type="text" name="college" >
 		<label>LinkedIn: </label>
-		<input type="text" name="linkedin">
-		<br><br>
+		<input type="text" name="linkedin" >
 		<label>GitHub: </label>
-		<input type="text" name="github">
-		<br><br>
+		<input type="text" name="github" >
+		<label>Update your profile pic</label>
 		<input type="file" name="profilePic" accept="image/*">
-		<br><br>
 		<input type="submit" value="Update Profile">
 	</form>
 </body>

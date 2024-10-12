@@ -1,0 +1,96 @@
+/* General styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4EEFF; /* Light background from your preferred palette */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Styling the heading */
+h2 {
+    text-align: center;
+    color: #424874; /* Darker color for contrast */
+    font-size: 28px;
+}
+
+/* Styling the form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #DCD6F7; /* Background from your color palette */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for labels */
+label {
+    display: block;
+    margin-top: 10px;
+    color: #424874;
+    font-size: 16px;
+    font-weight: bold;
+}
+.gender-group {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+
+}
+/* Input field styles */
+input[type="text"],
+input[type="date"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #A6B1E1;
+    border-radius: 4px;
+    background-color: #FFF;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: #424874; /* Dark color for button */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+/* Submit button hover effect */
+input[type="submit"]:hover {
+    background-color: #A6B1E1; /* Lighter shade on hover */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}
