@@ -54,4 +54,5 @@ public class NavController {
 		session.invalidate();
 		return "index";
 	}
+	
 }
